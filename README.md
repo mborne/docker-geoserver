@@ -27,11 +27,11 @@ docker build -t mborne/geoserver:2.21.1 .
 docker compose build
 ```
 
-Pour construire une autre version :
+Nous soulignerons l'intérêt des arguments de construction pour construire plusieurs versions avec un même [Dockerfile](Dockerfile) :
 
 ```bash
 docker build \
-    --build-arg version=2.20.6
+    --build-arg version=2.20.6 \
     -t mborne/geoserver:2.20.6 .
 ```
 

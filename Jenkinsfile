@@ -1,21 +1,33 @@
-
 pipeline {
     agent { label 'docker' }
 
-    parameters {
-        string(name: 'VERSION', defaultValue: '2.21.1', description: 'geoserver version')
-    }
+    // environment {
+    //     DOCKER_REGISTRY_URL = 'https://registry.quadtreeworld.net'
+    //     DOCKER_REGISTRY_CREDENTIAL_ID = 'nexus_user'
+    // }
 
     stages {
-        stage('Build and push image') {
+        stage('mborne/geoserver:2.21.1') {
             steps {
-                script {
-                    docker.withRegistry("${DOCKER_REGISTRY_URL}", "${DOCKER_REGISTRY_CREDENTIAL_ID}") {
-                        def app = docker.build('mborne/geoserver',"--build-arg version=${params.VERSION} .")
-                        app.push("${params.VERSION}")
-                    }
-                }
+                buildAndPushVersion("2.21.1","2.21")
             }
+        }
+
+        stage('mborne/geoserver:2.21.1') {
+            steps {
+                buildAndPushVersion("2.21.1","2.21")
+            }
+        }
+    }
+}
+
+void buildAndPushVersion(version,majorVersion){
+    script {
+        def build_args="--pull --build-arg version=${version} "
+        docker.withRegistry("${DOCKER_REGISTRY_URL}", "${DOCKER_REGISTRY_CREDENTIAL_ID}") {
+            def app = docker.build('mborne/geoserver', " ${build_args} .")
+            app.push("${version}")
+            app.push("${majorVersion}")
         }
     }
 }
