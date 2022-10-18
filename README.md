@@ -1,7 +1,7 @@
 
-# mborne/geoserver
+# mborne/docker-geoserver
 
-> This repository is kept to give a example on how to build docker image. [Explore available available images for geoserver Docker Hub](https://hub.docker.com/search?q=geoserver).
+> [DEV] This repository is kept to give a example on how to build docker image. [Explore available available images for geoserver Docker Hub](https://hub.docker.com/search?q=geoserver).
 
 ## Description
 
@@ -12,13 +12,16 @@ Illustration de la construction d'une image GeoServer dans le cadre du cours [mb
 ### Construction manuelle
 
 ```bash
+# avec docker
 docker build -t mborne/geoserver:2.21.1 .
+# avec docker compose
+docker compose build
 ```
-### Construction avec github actions
+## Intégration continue
 
 **TODO**
 
-## Utilisation de l'image
+## Démarrage de GeoServer
 
 ### Avec docker
 
@@ -28,11 +31,8 @@ docker run --rm -ti -p 8082:8080 mborne/geoserver:2.21.1
 
 ### Avec docker compose
 
-
-* Start geoserver : `docker-compose up -d`
-
-* Open http://geoserver.localhost/
-
-* Login with admin/geoserver
+* Démarrer la stack : `docker-compose up -d`
+* Ouvrir http://localhost:8082/
+* Se connecter avec admin/geoserver
 
 

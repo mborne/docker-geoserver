@@ -10,20 +10,17 @@ services:
       args:
         version: '2.21.1'
     ports:
-      - "127.0.0.1:8082:8080"
+      - "8082:8080"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.geoserver.rule=Host(`geoserver.${HOST_HOSTNAME}`)"
       - "traefik.http.routers.geoserver.middlewares=cors@file"
     volumes:
-      - geoserver-data:/var/geoserver
+      - geoserver-data:/var/geoserver-data-dir
     restart: unless-stopped
 
 volumes:
   geoserver-data:
-    name: geoserver-data
 
 networks:
-  default:
-    external:
-      name: devbox
+  geoserver:
