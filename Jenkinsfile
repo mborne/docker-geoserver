@@ -7,9 +7,9 @@ pipeline {
     // }
 
     stages {
-        stage('mborne/geoserver:2.21.1') {
+        stage('mborne/geoserver:2.20.6') {
             steps {
-                buildAndPushVersion("2.21.1","2.21")
+                buildAndPushVersion("2.20.6","2.20")
             }
         }
 
