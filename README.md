@@ -5,7 +5,7 @@
 
 ## Description
 
-Illustration de la construction d'une image GeoServer dans le cadre du cours [mborne/cours-devops](https://github.com/mborne/cours-devops#readme).
+Illustration de la construction d'une [image docker mborne/geoserver stockée sur ghcr.io](https://github.com/mborne/docker-geoserver/pkgs/container/geoserver) dans le cadre du cours [mborne/cours-devops](https://github.com/mborne/cours-devops#readme).
 
 ## Explications
 
