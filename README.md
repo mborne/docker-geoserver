@@ -38,7 +38,8 @@ docker build \
 
 ## Intégration continue
 
-**TODO**
+* [GitHub actions](docs/ci-github-actions.md)
+* [Jenkins](docs/ci-jenkins.md)
 
 ## Utilisation de l'image
 
