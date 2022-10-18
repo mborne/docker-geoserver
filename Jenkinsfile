@@ -3,7 +3,7 @@ pipeline {
     agent { label 'docker' }
 
     parameters {
-        string(name: 'VERSION', defaultValue: '2.18.0', description: 'geoserver version')
+        string(name: 'VERSION', defaultValue: '2.21.1', description: 'geoserver version')
     }
 
     stages {
