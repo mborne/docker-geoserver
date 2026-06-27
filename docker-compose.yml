@@ -1,14 +1,12 @@
-version: '3.5'
-
 services:
 
   geoserver:
     container_name: geoserver
-    image: ghcr.io/mborne/geoserver:v2.21.1
+    image: ghcr.io/mborne/geoserver:v2.28.4
     build:
       context: .
       args:
-        version: '2.21.1'
+        version: '2.28.4'
     ports:
       - "8082:8080"
     labels:
@@ -16,7 +14,7 @@ services:
       - "traefik.http.routers.geoserver.rule=Host(`geoserver.${HOST_HOSTNAME}`)"
       #- "traefik.http.routers.geoserver.middlewares=cors@file"
     volumes:
-      - geoserver-data:/var/geoserver-data-dir
+      - geoserver-data:/var/lib/geoserver_data
     restart: unless-stopped
 
 volumes:

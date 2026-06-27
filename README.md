@@ -22,7 +22,7 @@ Illustration de la construction d'une [image docker mborne/geoserver stockée su
 
 ```bash
 # avec docker
-docker build -t mborne/geoserver:2.21.1 .
+docker build -t mborne/geoserver:2.28.4 .
 # avec docker compose
 docker compose build
 ```
@@ -31,8 +31,8 @@ Nous soulignerons l'intérêt des arguments de construction pour construire plus
 
 ```bash
 docker build \
-    --build-arg version=2.20.6 \
-    -t mborne/geoserver:2.20.6 .
+    --build-arg version=2.28.5 \
+    -t mborne/geoserver:2.28.5 .
 ```
 
 
@@ -66,7 +66,7 @@ docker run -d \
     -p 8082:8080 \
     -v geoserver-data:/var/geoserver-data-dir \
     --restart unless-stopped \
-    mborne/geoserver:2.21.1
+    mborne/geoserver:2.28.4
 
 # Arrêt du conteneur
 docker stop geoserver
