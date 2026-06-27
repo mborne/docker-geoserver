@@ -1,7 +1,7 @@
 
 # mborne/docker-geoserver
 
-> [DEV] This repository is kept to give a example on how to build docker image. [Explore available images for geoserver on Docker Hub](https://hub.docker.com/search?q=geoserver).
+> [DEV] This repository is kept to give an example on how to build docker. An [official GeoServer Docker image](https://docs.geoserver.org/main/en/user/installation/docker/#quick-start) is now available at [docker.osgeo.org/geoserver](https://docker.osgeo.org/#browse/browse:docker).
 
 ## Description
 
