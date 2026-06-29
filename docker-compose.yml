@@ -14,7 +14,7 @@ services:
       - "traefik.http.routers.geoserver.rule=Host(`geoserver.${HOST_HOSTNAME}`)"
       #- "traefik.http.routers.geoserver.middlewares=cors@file"
     volumes:
-      - geoserver-data:/var/lib/geoserver_data
+      - geoserver-data:/var/geoserver-data-dir
     restart: unless-stopped
 
 volumes:
